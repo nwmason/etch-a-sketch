@@ -34,8 +34,14 @@ function colorGrid(color) {
 
 // -------------------------------------------------- //
 const generateButton = document.querySelector(".generate");
+const inputGrid = document.querySelector("input");
 
+console.log(inputGrid.value)
 generateButton.addEventListener("click", () => {
-    generateGrid();
-    colorGrid();
+    if (inputGrid.value < 16 || inputGrid.value > 128) {
+        alert("Grid size must be within the specified range!");
+    } else {
+        generateGrid(inputGrid.value);
+        colorGrid();
+    }
 })
