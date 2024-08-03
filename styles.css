@@ -67,8 +67,8 @@ body {
 .etch-screen {
     display: flex;
     flex-wrap: wrap;
-    height: 728px;
-    width: 1228px;
+    height: 756px;
+    width: 1200px;
     align-items: stretch;
     background-color: white;
     border: 3px solid #ffee93;
