@@ -2,17 +2,20 @@
 
 /* 
 color palette: 
-red: #ffc09f
-yellow: #ffee93
-neutral: #fcf5c7
-blue: #a0ced9
-green: #adf7b6
+red: #ffadad
+orange: #ffd6a5
+yellow: #fdffb6
+green: #caffbf
+light blue: #9bf6ff
+blue: #a0c4ff
+purple: #bdb2ff
+pink: #ffc6ff
 */
 
 * {
     font-family: "Rubik", sans-serif;
     font-weight: 400;
-    font-style: normal;  
+    font-style: normal;
 }
 
 body {
@@ -95,7 +98,7 @@ input {
     flex-wrap: wrap;
     flex: 1 1 3.125%;
     background-color: #adf7b6;
-    outline: 1px solid #66666611;    
+    outline: 1px solid #66666611;
 }
 
 /* control menu items */
@@ -111,11 +114,13 @@ input {
     box-shadow: 4px 4px 4px 2px #66666622;
 }
 
+/* generate grid items */
 .generate-menu {
     display: flex;
     gap: 16px;
     justify-content: center;
     margin-top: 8px;
+    margin-bottom: 24px;
 }
 
 .generate {
@@ -136,4 +141,12 @@ input {
 
 .generate:active {
     transform: translateY(1px);
+}
+
+/* extra options menu */
+.options-menu {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
