@@ -1,6 +1,11 @@
 const etchScreen = document.querySelector(".etch-screen");
 
 function generateGrid(gridNumber = 16) {
+    const input = document.querySelector("input");
+    const etchPixel = document.querySelectorAll(".etch-pixel");
+    etchPixel.forEach(div => {
+        div.remove();
+    })
     let basis = 100 / gridNumber
     console.log(basis);
 
@@ -12,10 +17,25 @@ function generateGrid(gridNumber = 16) {
             etchScreen.appendChild(etchPixel);
         }      
     }
+
+    input.focus();
 }
 
-const btn = document.querySelector("button");
+function colorGrid(color) {
+    console.log("grid loaded")
+    const etchPixels = document.querySelectorAll(".etch-pixel");
 
-btn.addEventListener("click", () => {
+    etchPixels.forEach(etchPixel => {
+        etchPixel.addEventListener("mouseover", () => {
+            console.log("hover");
+        })
+    })
+}
+
+// -------------------------------------------------- //
+const generateButton = document.querySelector(".generate");
+
+generateButton.addEventListener("click", () => {
     generateGrid();
+    colorGrid();
 })

@@ -24,11 +24,27 @@ body {
     padding: 0px;
 }
 
+input {
+    width: 200px;
+    height: 28px;
+    border-radius: 4px;
+    border: 1px solid #66666677;
+}
+
 /* text specific */
 .border-text {
     font-size: 26px;
     font-weight: 500;
     color: #fcf5c7;
+}
+
+.control-text {
+    font-size: 18px;
+    color: #33333388;
+}
+
+.control-center {
+    align-self: center;
 }
 
 
@@ -90,6 +106,34 @@ body {
     background-color: #a0ced9;
     height: 528px;
     width: 396px;
+    padding: 16px;
     border-radius: 12px;
     box-shadow: 4px 4px 4px 2px #66666622;
+}
+
+.generate-menu {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.generate {
+    flex-basis: 33%;
+    background-color: #adf7b6;
+    color: #333333aa;
+    border: 1px solid #22222222;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px 1px #66666611;
+}
+
+.generate:hover {
+    background-color: #95d79e;
+    color: #33333388;
+    cursor: pointer;
+    transform: translateY(-1px);
+}
+
+.generate:active {
+    transform: translateY(1px);
 }
