@@ -42,6 +42,7 @@ a {
 .control-text {
     font-size: 18px;
     color: #33333388;
+    margin-bottom: 8px;
 }
 
 .control-center {
@@ -109,9 +110,10 @@ a {
     flex-direction: column;
     background-color: #a0ced9;
     color: #333333aa;
-    height: 528px;
+    height: 256px;
     width: 396px;
     padding: 16px;
+    padding-top: 32px;
     border-radius: 12px;
     box-shadow: 4px 4px 4px 2px #66666622;
 }
@@ -154,16 +156,44 @@ a {
 
 /* extra options menu */
 .options-menu {
-    margin-top: 16px;
+    margin-top: 24px;
+    margin-left: 48px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    gap: 32px;
+}
+
+.clear-canvas {
+    height: 32px;
+    width: 148px;
+    background-color: #ffc09f;
+    color: inherit;
+    border: 1px solid #22222222;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px 1px #66666611;
 }
 
 .grid-checkbox {
-    color: blue;
+    margin-left: -24px;
+    height: 20px;
+    width: 20px;
 }
 
+.color-container {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-top: 42px;
+    margin-left: 96px;
+
+}
+
+.color-picker {
+    width: 64px;
+}
+
+/* dumb footer because i saw other people do it */
 .github-link {
     cursor: pointer;
 }

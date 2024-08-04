@@ -16,15 +16,20 @@
     </div>
     <div class="container">
        <div class="control-menu">
-        <span class="control-text control-center">Grid Size (singular number from 16 to 128)</span>
-        <div class="generate-menu">
-            <input type="number" value="16" id="grid-size">
-            <button class="generate">Generate Grid</button>
-        </div>
-        <div class="options-menu">
-            <span>Toggle Grid</span>
-            <input type="checkbox" class="grid-checkbox">
-        </div>
+            <span class="control-text control-center">Grid Size (singular number from 16 to 128)</span>
+            <div class="generate-menu">
+                <input type="number" value="16" id="grid-size">
+                <button class="generate">Generate Grid</button>
+            </div>
+            <div class="options-menu">
+                <button class="clear-canvas">Clear Canvas</button>
+                <span>Toggle Grid</span>
+                <input type="checkbox" class="grid-checkbox">
+            </div>
+            <div class="color-container">
+                <span>Pick a color!</span>
+                <input type="color" value="#000000" class="color-picker">
+            </div>
        </div> 
        <div class="etch-screen"></div>
     </div>
