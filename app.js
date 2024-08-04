@@ -1,8 +1,8 @@
-const etchScreen = document.querySelector(".etch-screen");
-
 function generateGrid(gridNumber = 16) {
+    const etchScreen = document.querySelector(".etch-screen");
     const input = document.querySelector("input");
     const etchPixel = document.querySelectorAll(".etch-pixel");
+
     etchPixel.forEach(div => {
         div.remove();
     })
@@ -31,13 +31,20 @@ function generateGrid(gridNumber = 16) {
     input.focus();
 }
 
+function fetchColor() {
+    const colorPicker = document.querySelector(".color-picker");
+    color = colorPicker.value;
+
+    return color;
+}
+
 function colorGrid() {
-    console.log("grid loaded")
     const etchPixels = document.querySelectorAll(".etch-pixel");
 
     etchPixels.forEach(etchPixel => {
         etchPixel.addEventListener("mouseover", () => {
-            console.log("hover");
+            color = fetchColor();
+            etchPixel.style["background-color"] = color
         })
     })
 }
@@ -46,8 +53,8 @@ function colorGrid() {
 const generateButton = document.querySelector(".generate");
 const inputGrid = document.querySelector("#grid-size");
 const gridCheckbox = document.querySelector(".grid-checkbox");
+const clearCanvas = document.querySelector(".clear-canvas")
 
-console.log(inputGrid.value);
 generateButton.addEventListener("click", () => {
     if (inputGrid.value < 16 || inputGrid.value > 128) {
         alert("Grid size must be within the specified range!");
@@ -73,3 +80,7 @@ gridCheckbox.addEventListener("change", () => {
         console.log("border removed");
     }
 });
+
+clearCanvas.addEventListener("click", () => {
+    
+})
