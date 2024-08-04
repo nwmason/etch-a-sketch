@@ -34,9 +34,10 @@ function colorGrid(color) {
 
 // -------------------------------------------------- //
 const generateButton = document.querySelector(".generate");
-const inputGrid = document.querySelector("input");
+const inputGrid = document.querySelector("#grid-size");
+const gridCheckbox = document.querySelector(".grid-checkbox");
 
-console.log(inputGrid.value)
+console.log(inputGrid.value);
 generateButton.addEventListener("click", () => {
     if (inputGrid.value < 16 || inputGrid.value > 128) {
         alert("Grid size must be within the specified range!");
@@ -44,4 +45,21 @@ generateButton.addEventListener("click", () => {
         generateGrid(inputGrid.value);
         colorGrid();
     }
-})
+});
+
+gridCheckbox.addEventListener("change", () => {
+    const etchPixel = document.querySelectorAll(".etch-pixel");
+    
+    if (gridCheckbox.checked) {
+        etchPixel.forEach(etchPixel => {
+            etchPixel.setAttribute("class", "etch-pixel bordered");
+        });
+        console.log("border added");
+
+    } else {
+        etchPixel.forEach(etchPixel => {
+            etchPixel.setAttribute("class", "etch-pixel");
+        })
+        console.log("border removed");
+    }
+});
