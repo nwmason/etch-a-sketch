@@ -6,22 +6,32 @@ function generateGrid(gridNumber = 16) {
     etchPixel.forEach(div => {
         div.remove();
     })
+    // ensures pixel sizes are even and relatively more square-like
     let basis = 100 / gridNumber
     console.log(basis);
 
     for (let c = 0; c < gridNumber; c++) {
         for (let r = 0; r < gridNumber; r++) {
+            const gridCheckbox = document.querySelector(".grid-checkbox");
             const etchPixel = document.createElement("div");
-            etchPixel.setAttribute("class", "etch-pixel");
-            etchPixel.style.flexBasis = `${basis}%`;
-            etchScreen.appendChild(etchPixel);
+
+            // persistent grid check box so you don't need to repeatedly check a grid
+            if (gridCheckbox.checked) {
+                etchPixel.setAttribute("class", "etch-pixel bordered");
+                etchPixel.style.flexBasis = `${basis}%`;
+                etchScreen.appendChild(etchPixel);   
+            } else {
+                etchPixel.setAttribute("class", "etch-pixel");
+                etchPixel.style.flexBasis = `${basis}%`;
+                etchScreen.appendChild(etchPixel);
+            }
         }      
     }
 
     input.focus();
 }
 
-function colorGrid(color) {
+function colorGrid() {
     console.log("grid loaded")
     const etchPixels = document.querySelectorAll(".etch-pixel");
 
