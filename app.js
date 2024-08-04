@@ -19,13 +19,13 @@ function generateGrid(gridNumber = 16) {
             if (gridCheckbox.checked) {
                 etchPixel.setAttribute("class", "etch-pixel bordered");
                 etchPixel.style.flexBasis = `${basis}%`;
-                etchScreen.appendChild(etchPixel);   
+                etchScreen.appendChild(etchPixel);
             } else {
                 etchPixel.setAttribute("class", "etch-pixel");
                 etchPixel.style.flexBasis = `${basis}%`;
                 etchScreen.appendChild(etchPixel);
             }
-        }      
+        }
     }
 
     input.focus();
@@ -59,14 +59,22 @@ generateButton.addEventListener("click", () => {
     if (inputGrid.value < 16 || inputGrid.value > 128) {
         alert("Grid size must be within the specified range!");
     } else {
-        generateGrid(inputGrid.value);
-        colorGrid();
+
+        // stops generate grid button from repeatedly generating the same grid
+        // mostly to move the clear canvas functionallity to it's own button
+        const pixelCount = document.querySelectorAll(".etch-pixel");
+        if (pixelCount.length / inputGrid.value != inputGrid.value) {
+            generateGrid(inputGrid.value);
+            colorGrid();
+        } else {
+            console.log("repeat generation; aborting")
+        }
     }
 });
 
 gridCheckbox.addEventListener("change", () => {
     const etchPixel = document.querySelectorAll(".etch-pixel");
-    
+
     if (gridCheckbox.checked) {
         etchPixel.forEach(etchPixel => {
             etchPixel.setAttribute("class", "etch-pixel bordered");
@@ -82,5 +90,6 @@ gridCheckbox.addEventListener("change", () => {
 });
 
 clearCanvas.addEventListener("click", () => {
-    
+    generateGrid(inputGrid.value);
+    colorGrid();
 })
